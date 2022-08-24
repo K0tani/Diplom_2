@@ -58,9 +58,9 @@ public class CreatingOrderWithAuthorizationTest {
         ingredients.then().assertThat().statusCode(SC_OK);
         Ingredients[] getIngredients = ingredients.body().as(IngredientsResponse.class).getData();
         ArrayList<String> ingredientsList = new ArrayList<>();
-        ingredientsList.add(getIngredients[0]._id);
-        ingredientsList.add(getIngredients[1]._id);
-        ingredientsList.add(getIngredients[2]._id);
+        ingredientsList.add(getIngredients[0].get_id());
+        ingredientsList.add(getIngredients[1].get_id());
+        ingredientsList.add(getIngredients[2].get_id());
         ingredientsRequest = new IngredientsRequest(ingredientsList);
         orderClient.createOrder(ingredientsRequest, token)
                 .assertThat()

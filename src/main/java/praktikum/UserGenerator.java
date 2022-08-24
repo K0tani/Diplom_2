@@ -6,9 +6,9 @@ import lombok.*;
 @AllArgsConstructor
 public class UserGenerator {
 
-    public String email;
-    public String password;
-    public String name;
+    private String email;
+    private String password;
+    private String name;
 
     public static UserGenerator getRandom() {
         Faker faker = new Faker();

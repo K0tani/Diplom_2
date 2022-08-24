@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.given;
 
 public class OrderClient extends RestAssuredClient {
 
-    public final String PATH = "https://stellarburgers.nomoreparties.site/api/" + "orders";
+    public final String PATH = "/orders";
 
     @Step("Cоздание заказа")
     public ValidatableResponse createOrder(IngredientsRequest ingredientsRequest, String token) {
@@ -13,7 +13,7 @@ public class OrderClient extends RestAssuredClient {
                 .spec(requestSpecification())
                 .header("Authorization", token)
                 .body(ingredientsRequest)
-                .when()
+                .when().log().all()
                 .post(PATH)
                 .then().log().ifError();
     }

@@ -6,5 +6,5 @@ import java.util.List;
 @AllArgsConstructor
 public class IngredientsRequest {
 
-    List<String> ingredients;
+    private List<String> ingredients;
 }

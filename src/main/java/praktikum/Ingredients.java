@@ -3,5 +3,6 @@ import lombok.Data;
 
 @Data
 public class Ingredients {
-    public String _id;
+
+    private String _id;
 }
